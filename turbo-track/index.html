@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#10172b" />
+  <title>Turbo Track</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="logo"><span>🏁</span> TURBO TRACK</div>
+      <button id="soundButton" class="round-button" type="button" aria-label="Turn sound off">🔊</button>
+    </header>
+
+    <section class="game-wrap" aria-label="Turbo Track racing game">
+      <div class="hud">
+        <div><small>SCORE</small><strong id="score">00000</strong></div>
+        <div><small>COINS</small><strong><span aria-hidden="true">🪙</span> <span id="coins">0</span></strong></div>
+        <div><small>SPEED</small><strong><span id="speed">0</span> <em>km/h</em></strong></div>
+      </div>
+
+      <canvas id="gameCanvas" width="480" height="720" aria-label="Road racing area"></canvas>
+
+      <div class="status-bars">
+        <div class="fuel-row"><span>⛽ FUEL</span><div class="meter"><span id="fuelBar"></span></div></div>
+        <div id="lives" class="lives" aria-label="Three lives">❤️❤️❤️</div>
+      </div>
+
+      <div id="message" class="message" aria-live="polite"></div>
+
+      <div class="touch-controls" aria-label="Touch controls">
+        <button id="leftButton" type="button" aria-label="Steer left">◀</button>
+        <button id="boostButton" class="boost" type="button" aria-label="Use turbo boost">⚡<span>TURBO</span></button>
+        <button id="rightButton" type="button" aria-label="Steer right">▶</button>
+      </div>
+
+      <div id="startPanel" class="panel open">
+        <div class="panel-card">
+          <div class="hero-car">🏎️</div>
+          <p class="eyebrow">READY TO RACE?</p>
+          <h1>TURBO TRACK</h1>
+          <p>Dod​ge traffic, grab coins and collect fuel. Hit turbo when the road is clear!</p>
+          <div class="keys"><span>←</span><span>→</span> steer <span>SPACE</span> turbo</div>
+          <button id="startButton" class="start-button" type="button">START ENGINE</button>
+          <p class="best">BEST SCORE: <strong id="bestScore">0</strong></p>
+        </div>
+      </div>
+
+      <div id="endPanel" class="panel">
+        <div class="panel-card">
+          <p class="eyebrow">RACE OVER</p>
+          <h2 id="endTitle">GREAT RUN!</h2>
+          <div class="result-score"><small>YOUR SCORE</small><strong id="finalScore">0</strong></div>
+          <p>You collected <strong id="finalCoins">0</strong> coins</p>
+          <button id="againButton" class="start-button" type="button">RACE AGAIN</button>
+        </div>
+      </div>
+    </section>
+
+    <p class="desktop-tip">Use ← → or A D to steer · Space for turbo · P to pause</p>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
