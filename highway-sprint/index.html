@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#11182b" />
+  <title>Highway Sprint</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header><div class="logo">🏁 HIGHWAY <b>SPRINT</b></div><button id="soundButton" class="sound" type="button" aria-label="Turn sound off">🔊</button></header>
+    <section class="game" aria-label="Highway Sprint racing game">
+      <div class="hud">
+        <div><small>POSITION</small><strong id="position">1st</strong></div>
+        <div><small>LAP</small><strong><span id="leg">1</span>/1</strong></div>
+        <div><small>SPEED</small><strong><span id="speed">0</span><em> km/h</em></strong></div>
+        <div><small>TIME</small><strong id="time">0:00.0</strong></div>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="raceCanvas" width="520" height="720" aria-label="Straight highway race"></canvas>
+        <div id="countdown" class="countdown" aria-live="assertive"></div>
+        <div id="message" class="message" aria-live="polite"></div>
+        <div class="mini-progress"><span id="progressBar"></span><i id="progressCar">🏎️</i></div>
+      </div>
+      <div class="footer"><span id="direction">⬆ FINISH AHEAD</span><div class="boost"><label>⚡ TURBO</label><div><i id="boostBar"></i></div></div></div>
+      <div class="touch-controls" aria-label="Touch controls">
+        <button id="leftButton" type="button" aria-label="Move left">◀</button>
+        <div class="pedals"><button id="brakeButton" class="brake" type="button">BRAKE</button><button id="gasButton" class="gas" type="button">GAS</button><button id="turboButton" class="turbo-button" type="button">⚡</button></div>
+        <button id="rightButton" type="button" aria-label="Move right">▶</button>
+      </div>
+      <div id="startPanel" class="panel open">
+        <div class="panel-card">
+          <div class="hero">🏎️</div><p class="eyebrow">CHOOSE YOUR RACE</p><h1>HIGHWAY<br /><span>SPRINT</span></h1>
+          <p>A one-minute desert sprint! The rival cars stay in their lanes, so choose a clear lane and race to the finish.</p>
+          <fieldset><legend>CHOOSE LEVEL</legend><label><input type="radio" name="level" value="level1" checked /><span>⭐ LEVEL 1<br />EASY</span></label><label><input type="radio" name="level" value="level2" /><span>🔥 LEVEL 2<br />CLOSE</span></label><label><input type="radio" name="level" value="level3" /><span>🏆 LEVEL 3<br />CHAMPION</span></label></fieldset>
+          <div class="keys"><kbd>↑</kbd> Gas <kbd>↓</kbd> Brake <kbd>←</kbd><kbd>→</kbd> Change lane <kbd>SPACE</kbd> Turbo</div>
+          <button id="startButton" class="primary" type="button">START RACE</button><p class="record">BEST TIME: <strong id="bestTime">--:--.-</strong></p>
+        </div>
+      </div>
+      <div id="finishPanel" class="panel">
+        <div class="panel-card"><div id="medal" class="hero">🏆</div><p class="eyebrow">RACE COMPLETE</p><h2 id="finishTitle">CHAMPION!</h2>
+          <div class="results"><div><small>POSITION</small><strong id="finalPosition">1st</strong></div><div><small>TIME</small><strong id="finalTime">0:00.0</strong></div></div>
+          <button id="againButton" class="primary" type="button">RACE AGAIN</button>
+        </div>
+      </div>
+    </section>
+    <p class="tip">Arrow keys or W A S D · Space for turbo · P to pause</p>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
