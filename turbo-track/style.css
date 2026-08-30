@@ -50,6 +50,8 @@ canvas { display:block; width:100%; height:auto; max-height:calc(100vh - 245px);
 .result-score strong { display:block; color:var(--yellow); font-size:2.6rem; }
 .desktop-tip { margin:10px 0 0; text-align:center; color:#7182a5; font:700 .75rem system-ui,sans-serif; }
 @keyframes pop { from{transform:scale(.75);opacity:0} to{transform:scale(1);opacity:1} }
-@media (min-width:700px) { .touch-controls { display:none; } canvas { max-height:calc(100vh - 180px); } }
+/* Hide touch controls only on true mouse/trackpad devices. Wide phones and
+   tablets can report desktop-sized viewports but still need steering buttons. */
+@media (min-width:700px) and (hover:hover) and (pointer:fine) { .touch-controls { display:none; } canvas { max-height:calc(100vh - 180px); } }
 @media (max-height:700px) { canvas { min-height:320px; } .panel-card { padding:14px 18px; } .hero-car{font-size:3.2rem}.panel h1{font-size:2.2rem}.keys{margin:8px 0}.panel-card>p{margin:6px 0} }
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
