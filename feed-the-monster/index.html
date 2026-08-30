@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#8a5cf6" />
+    <title>Feed the Monster!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <div class="brand"><span aria-hidden="true">⭐</span> Monster Munch</div>
+        <div class="controls">
+          <div class="score" aria-live="polite">Stars: <strong id="score">0</strong></div>
+          <button id="soundButton" class="icon-button" type="button" aria-label="Turn sound off">🔊</button>
+        </div>
+      </header>
+
+      <section class="game-card" aria-labelledby="instruction">
+        <div class="round-row">
+          <span id="roundLabel">Round 1 of 6</span>
+          <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+        </div>
+
+        <div class="speech-bubble">
+          <p id="instruction">Feed me <strong id="targetCount">2</strong> <strong id="targetName">apples</strong>! <span id="targetEmoji" class="target-emoji" aria-hidden="true">🍎</span></p>
+          <div id="countDots" class="count-dots" aria-label="0 of 2 collected"></div>
+        </div>
+
+        <div id="monster" class="monster" aria-label="A happy purple monster">
+          <div class="horn horn-left"></div>
+          <div class="horn horn-right"></div>
+          <div class="monster-body">
+            <div class="eye eye-left"><span></span></div>
+            <div class="eye eye-right"><span></span></div>
+            <div class="cheek cheek-left"></div>
+            <div class="cheek cheek-right"></div>
+            <div class="mouth"><div class="tooth tooth-left"></div><div class="tooth tooth-right"></div></div>
+          </div>
+          <div class="foot foot-left"></div>
+          <div class="foot foot-right"></div>
+        </div>
+
+        <p id="feedback" class="feedback" aria-live="assertive">Pick the right snacks!</p>
+
+        <div id="foodTray" class="food-tray" aria-label="Food choices"></div>
+      </section>
+
+      <p class="tip">Tap a snack to feed the monster</p>
+    </main>
+
+    <div id="celebration" class="celebration" aria-hidden="true"></div>
+
+    <div id="welcomeModal" class="modal open" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+      <div class="modal-card">
+        <div class="mini-monster" aria-hidden="true">👾</div>
+        <h1 id="welcomeTitle">Feed the Monster!</h1>
+        <p>Listen to what Munchy wants, then tap the right snacks.</p>
+        <button id="startButton" class="primary-button" type="button">Let's Play!</button>
+      </div>
+    </div>
+
+    <div id="finishModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="finishTitle">
+      <div class="modal-card">
+        <div class="trophy" aria-hidden="true">🏆</div>
+        <h2 id="finishTitle">Amazing feeding!</h2>
+        <p>You earned <strong id="finalScore">0</strong> stars!</p>
+        <button id="playAgainButton" class="primary-button" type="button">Play Again</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
