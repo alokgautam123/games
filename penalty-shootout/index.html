@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Penalty Shootout Championship</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="../hub-back.css">
+</head>
+<body>
+  <a class="hub-back" href="../index.html"><span>←</span> ALL GAMES</a>
+  <main class="shell">
+    <header>
+      <div class="logo">⚽</div>
+      <div><small>FINAL NIGHT</small><h1>PENALTY SHOOTOUT <em>CHAMPIONSHIP</em></h1></div>
+      <button id="sound" class="round" aria-label="Toggle sound">🔊</button>
+    </header>
+    <section class="scoreboard">
+      <div><span id="levelName">LEVEL 1 · TRAINING</span><b id="round">SHOT 1 / 5</b></div>
+      <div><span>GOALS</span><b id="goals">0</b></div>
+      <div class="shot-box"><span>SHOTS</span><aside id="shots"></aside></div>
+      <div><span>SCORE</span><b id="score">0000</b></div>
+    </section>
+    <section class="arena">
+      <canvas id="game" width="960" height="600"></canvas>
+      <button id="levelsBtn" class="levels-button">☰ LEVELS</button>
+      <div class="current-level"><small>CURRENT LEVEL</small><strong id="currentLevel">LEVEL 1 · TRAINING</strong></div>
+      <div id="callout" class="callout"><strong>AIM YOUR SHOT</strong><span>Move the glowing target</span></div>
+      <div id="levelSelect" class="level-select">
+        <small>ROAD TO GLORY</small><h2>CHOOSE YOUR LEVEL</h2>
+        <div class="level-grid">
+          <button data-level="1"><i>1</i><b>TRAINING</b><span>Stationary keeper</span><em>5/5 chance: 90%</em></button>
+          <button data-level="2"><i>2</i><b>MOVING KEEPER</b><span>Watch his position</span><em>5/5 chance: 75%</em></button>
+          <button data-level="3"><i>3</i><b>WIND CHALLENGE</b><span>Allow for the wind</span><em>5/5 chance: 50%</em></button>
+          <button data-level="4"><i>4</i><b>TARGET MASTER</b><span>Hit the spotlight</span><em>5/5 chance: 40%</em></button>
+          <button data-level="5"><i>5</i><b>CHAMPIONSHIP</b><span>Everything at once</span><em>Usually 3/5 goals</em></button>
+        </div>
+      </div>
+      <div id="result" class="result hidden">
+        <div class="trophy">🏆</div><small>SHOOTOUT COMPLETE</small>
+        <h2 id="resultTitle">CHAMPION!</h2><p id="resultText"></p>
+        <div class="stats"><div>GOALS<b id="finalGoals"></b></div><div>SCORE<b id="finalScore"></b></div></div>
+        <div class="result-actions"><button id="again">PLAY AGAIN</button><button id="next">NEXT LEVEL</button></div>
+      </div>
+    </section>
+    <section class="controls">
+      <div class="meter"><label>SHOT POWER</label><div class="track"><i id="power"></i><mark></mark></div><small>Stop in the golden zone</small></div>
+      <button id="shoot" class="shoot">⚽ SHOOT</button>
+      <div class="help"><b>HOW TO PLAY</b><span>Pointer or arrow keys to aim</span><span>Tap SHOOT or press Space</span><span>Golden corners = bonus points</span></div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
