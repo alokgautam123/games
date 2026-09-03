@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#42bff5">
+  <title>City Escape: Chase Zone</title>
+  <link rel="stylesheet" href="../hub-back.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="Bright city chase arena"></canvas>
+    <header>
+      <div class="brand"><span>🏃</span><div><small id="levelName">LEVEL 1 · SUNNY SQUARE</small><h1>CITY ESCAPE <em>CHASE ZONE</em></h1></div></div>
+      <div class="actions"><a href="../index.html">← GAMES</a><button id="pause">Ⅱ</button><button id="sound">🔊</button><button id="fullscreen">⛶</button></div>
+    </header>
+    <section class="hud">
+      <div><small>TIME</small><strong id="time">1:00</strong></div>
+      <div><small>STARS</small><strong>⭐ <span id="stars">0</span></strong></div>
+      <div><small>SCORE</small><strong id="score">0000</strong></div>
+      <div><small>CHASE</small><strong id="danger">SAFE</strong></div>
+    </section>
+    <div id="routeWarning" class="route-warning">⚠ ONE WAY OUT!</div>
+    <div id="powerBadge" class="power-badge"></div>
+    <div id="toast" class="toast"></div>
+    <section id="startPanel" class="panel open"><div class="card"><div class="art">👮‍♂️ <span>🏃</span> 🐕</div><small id="introKicker">60 SECOND ESCAPE</small><h2 id="introTitle">SUNNY SQUARE</h2><p id="introText">Police are closing in from every direction. Read the open paths, grab stars, and survive until the rescue gate opens.</p><div class="level-picks"><button class="level-pick selected" data-level="1"><b>LEVEL 1</b><span>Sunny Square</span></button><button class="level-pick" data-level="2"><b>LEVEL 2</b><span>Market Mayhem</span></button></div><div class="tips"><b>❄️ FREEZE</b><b>👟 SPEED</b><b>⭐ SCORE</b></div><div class="keys">ARROWS / WASD TO MOVE · MOBILE D-PAD</div><button id="start">START LEVEL 1</button></div></section>
+    <section id="endPanel" class="panel"><div class="card"><div id="endIcon" class="end-icon">🏆</div><small>CHASE RESULT</small><h2 id="endTitle">YOU ESCAPED!</h2><p id="endText"></p><div class="results"><div>STARS<b id="finalStars">0</b></div><div>SCORE<b id="finalScore">0</b></div><div>BEST<b id="best">0</b></div></div><button id="again">PLAY AGAIN</button></div></section>
+    <div id="paused" class="paused">PAUSED<small>Press P or tap Ⅱ to continue</small></div>
+    <nav class="mobile-controls" aria-label="Movement controls"><button id="up">▲</button><button id="left">◀</button><button id="down">▼</button><button id="right">▶</button></nav>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
