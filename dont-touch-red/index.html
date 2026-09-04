@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#050506"><title>DON'T TOUCH RED</title><link rel="stylesheet" href="style.css"></head><body>
+<main id="game"><canvas id="canvas" aria-label="Don't Touch Red playfield" tabindex="0"></canvas><div class="grain"></div><div id="flash"></div>
+<section id="intro" class="screen open"><div><h1>DON’T<br>TOUCH <span>RED</span></h1><p>Survive for 120 seconds</p><button id="play">PLAY</button></div></section>
+<header id="hud"><b>DON’T TOUCH <i>RED</i></b><div><small>SURVIVED</small><strong id="time">000.0</strong></div><div><small>PHASE</small><strong id="phase">01 / 09</strong></div><button id="sound" aria-label="Toggle sound">SOUND ◉</button></header>
+<div id="cue"><b>MOVE</b><span>White follows you. Red ends the run.</span></div><div id="impact">RED.</div>
+<section id="result" class="screen"><div><p id="resultLabel">CONTACT</p><h2>SURVIVED<br><span id="survived">00.0s</span></h2><dl><div><dt>BEST</dt><dd id="best">00.0s</dd></div><div><dt>PHASE</dt><dd id="finalPhase">01</dd></div></dl><button id="again">TRY AGAIN</button></div></section>
+</main><script type="module" src="game.js"></script></body></html>
